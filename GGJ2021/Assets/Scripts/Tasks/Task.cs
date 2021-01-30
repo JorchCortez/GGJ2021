@@ -10,5 +10,7 @@ public class Task : ScriptableObject
 
     public string title;
     public string description;
+    public int goal;
 
+    public int completableGoal;
 }

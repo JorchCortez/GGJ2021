@@ -4,30 +4,45 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Player control")]
+
     public float speed = 1;
+
     [SerializeField]
-    private float defaultSize = 1;
+    private float defaultPlayerSize = 1;
     float inputX;
     float inputY;
 
     bool headingRight = true;
     bool canModifySize = true;
 
-    // Start is called before the first frame update
+
+    [Header("Tasks")]
+    public TaskManager TM; 
+    Task task;
+
+    [Header("Interactions")]
+    [SerializeField]
+    private bool canInteract = false;
+    GameObject interactible = null;
+
+
     void Start()
     {
-        defaultSize = transform.localScale.x;
+        defaultPlayerSize = transform.localScale.x;
 
-        transform.localScale = new Vector3(defaultSize, defaultSize, defaultSize);
+        transform.localScale = new Vector3(defaultPlayerSize, defaultPlayerSize, defaultPlayerSize);
 
     }
-
-    // Update is called once per frame
+     
     void Update()
     {
         inputX = Input.GetAxis("Horizontal");
         inputY = Input.GetAxis("Vertical");
         canModifySize = inputY >= 0.01 || inputY <= -0.01;
+
+
+        ShowInteraction();
     }
 
     private void FixedUpdate()
@@ -39,14 +54,11 @@ public class Player : MonoBehaviour
     }
 
     private void AlterSizeByPosition()
-    {
-        Debug.Log(canModifySize);
-        Debug.Log(inputY);
+    { 
         if (canModifySize)
         { 
                 float scaleVariation = -transform.position.y / 4 ;
-                Vector3 scaleChange = new Vector3(defaultSize + scaleVariation, defaultSize + scaleVariation, defaultSize + scaleVariation);
-                Debug.Log(scaleChange);
+                Vector3 scaleChange = new Vector3(defaultPlayerSize + scaleVariation, defaultPlayerSize + scaleVariation, defaultPlayerSize + scaleVariation);
                 transform.localScale = scaleChange;  
         } 
         canModifySize = false;
@@ -63,5 +75,53 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    private void ShowInteraction()
+    {
+        //TODO:
+        //Show the interaction button or something that will give the player the option to interact with an object 
+        if (canInteract)
+        {
+            if (Input.GetKeyDown(KeyCode.M))
+            { 
+                SetCurrentTask(interactible); 
+            }
+        }
+    }
+ 
+
+    private void SetCurrentTask(GameObject interactible)
+    {
+        if (interactible.GetComponent<TaskHandler>())
+        {
+            Task task = interactible.GetComponent<TaskHandler>().GetObjectTask();
+            TM.SetCurrentTask(task);
+        }
+        Debug.Log("Interacted with" + interactible.gameObject.name);
+        
+    }
+
+
+
+    /*Unity Functions*/
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Interactible")
+        {
+            interactible = other.gameObject;
+
+            canInteract = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Interactible")
+        {
+            interactible = null;
+            canInteract = false;
+        }
+    }
+
 
 }
