@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
     { 
         if (canModifySize)
         { 
-                float scaleVariation = -transform.position.y / 4 ;
+                float scaleVariation = -transform.position.y / 15 ;
                 Vector3 scaleChange = new Vector3(defaultPlayerSize + scaleVariation, defaultPlayerSize + scaleVariation, defaultPlayerSize + scaleVariation);
                 transform.localScale = scaleChange;  
         } 
