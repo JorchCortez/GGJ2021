@@ -89,7 +89,6 @@ public class Player : MonoBehaviour
         }
     }
  
-
     private void SetCurrentTask(GameObject interactible)
     {
         if (interactible.GetComponent<TaskHandler>())
@@ -101,8 +100,7 @@ public class Player : MonoBehaviour
         
     }
 
-
-
+    
     /*Unity Functions*/
     private void OnTriggerEnter2D(Collider2D other)
     {
