@@ -4,7 +4,7 @@ using UnityEngine;
  
 public class TaskManager : MonoBehaviour
 { 
-    private Task task;
+    private InteractibleItem task;
 
     [SerializeField]
     string taskTitle;
@@ -15,21 +15,24 @@ public class TaskManager : MonoBehaviour
 
 
 
-    public void SetCurrentTask(Task givenTask)
+    public void SetCurrentTask(InteractibleItem givenTask)
     {
-        if(givenTask.completableGoal == 0 || givenTask.completableGoal == taskGoal)
+        if (givenTask.includesTask)
         { 
-            task = givenTask;
+            if (givenTask.completableGoal == 0 || givenTask.completableGoal == taskGoal)
+            {
+                task = givenTask;
 
-            SetTaskGoal(givenTask.goal);
+                SetTaskGoal(givenTask.goal);
 
-            taskTitle = givenTask.title;
-            taskDescription = givenTask.description;
-            taskGoal = givenTask    .goal;
-        }
-        else
-        {
-            Debug.Log("this is not the next task");
+                taskTitle = givenTask.title;
+                taskDescription = givenTask.description;
+                taskGoal = givenTask.goal;
+            }
+            else
+            {
+                Debug.Log("this is not the next task");
+            }
         }
     }
 

@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79139f8d100ee543a8d8abb514e5138, type: 3}
   m_Name: First Task
   m_EditorClassIdentifier: 
-  isActive: 0
-  title: first task
-  description: Now this is what to do
+  objectName: Retrato
+  objectDescription: Una imagen de 2 ancianos, me pregunto quienes seran
+  objectImage: {fileID: 6543065848861716628, guid: 62b62888ec0f71a4d8565ae72d6c3ac2,
+    type: 3}
+  includesTask: 1
+  title: Un dia importante?
+  description: La fotografia tiene una fecha en ella, me pregunto cuanto faltara
+    para esa fecha
   goal: 1
   completableGoal: 0

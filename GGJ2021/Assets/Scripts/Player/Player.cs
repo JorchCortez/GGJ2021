@@ -18,8 +18,8 @@ public class Player : MonoBehaviour
 
 
     [Header("Tasks")]
-    public TaskManager TM; 
-    Task task;
+    public TaskManager TM;
+    InteractibleItem task;
 
     [Header("Interactions")]
     [SerializeField]
@@ -93,8 +93,8 @@ public class Player : MonoBehaviour
     {
         if (interactible.GetComponent<TaskHandler>())
         {
-            Task task = interactible.GetComponent<TaskHandler>().GetObjectTask();
-            TM.SetCurrentTask(task);
+            InteractibleItem interaction = interactible.GetComponent<TaskHandler>().GetItemInfo();
+            TM.SetCurrentTask(interaction);
         }
         Debug.Log("Interacted with" + interactible.gameObject.name);
         

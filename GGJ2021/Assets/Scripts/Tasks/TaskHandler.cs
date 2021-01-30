@@ -5,10 +5,10 @@ using UnityEngine;
 public class TaskHandler : MonoBehaviour
 {
     [SerializeField]
-    Task task;
+    InteractibleItem item;
 
-    public Task GetObjectTask()
+    public InteractibleItem GetItemInfo()
     {
-        return task;
+        return item;
     }
 }
