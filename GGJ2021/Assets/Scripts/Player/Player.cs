@@ -19,8 +19,8 @@ public class Player : MonoBehaviour
 
 
     [Header("Tasks")]
-    public TaskManager TM;
-    InteractibleItem task;
+    public TaskManager TM; 
+
 
     [Header("Interactions")]
     [SerializeField]
@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
 
     [Header("Animations")]
     public Animator anim;
+
 
 
     void Start()
@@ -121,7 +122,7 @@ public class Player : MonoBehaviour
     private void SetCurrentTask(GameObject interactible)
     {
         if (interactible.GetComponent<TaskHandler>())
-        { 
+        {
             TM.SetCurrentTask(interactible);
         }  
     }
@@ -149,6 +150,7 @@ public class Player : MonoBehaviour
 
     private void ToggleInventory()
     {
+
         inventory.SetActive(!inventory.activeSelf);
         canMove = !inventory.activeSelf;
     }
