@@ -16,14 +16,20 @@ public class TaskManager : MonoBehaviour
     public InformacionInventario Inventario;
 
 
-    public void SetCurrentTask(InteractibleItem givenTask)
+    public void SetCurrentTask(GameObject interactible)
     {
-        Inventario.SetObjectAccquired(givenTask);
+        InteractibleItem givenTask = interactible.GetComponent<TaskHandler>().GetItemInfo();
 
         if (givenTask.includesTask)
         { 
-            if (givenTask.completableGoal == 0 || givenTask.completableGoal == taskGoal)
+            if ((givenTask.completableGoal == 0 && taskGoal < 1 ) || givenTask.completableGoal == taskGoal)
             {
+
+                if (interactible.GetComponent<InteractionHandler>())
+                {
+                    interactible.GetComponent<InteractionHandler>().Colorize();
+                }
+                Inventario.SetObjectAccquired(givenTask);
                 task = givenTask;
 
                 SetTaskGoal(givenTask.goal);
@@ -35,6 +41,14 @@ public class TaskManager : MonoBehaviour
             else
             {
                 Debug.Log("this is not the next task");
+            }
+        }
+        else
+        { 
+            Inventario.SetObjectAccquired(givenTask);
+            if (interactible.GetComponent<InteractionHandler>())
+            {
+                interactible.GetComponent<InteractionHandler>().Colorize();
             }
         }
     }

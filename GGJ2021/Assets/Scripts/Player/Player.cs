@@ -92,16 +92,9 @@ public class Player : MonoBehaviour
     private void SetCurrentTask(GameObject interactible)
     {
         if (interactible.GetComponent<TaskHandler>())
-        {
-            if (interactible.GetComponent<InteractionHandler>())
-            {
-                interactible.GetComponent<InteractionHandler>().Colorize();
-            }
-            InteractibleItem interaction = interactible.GetComponent<TaskHandler>().GetItemInfo();
-            TM.SetCurrentTask(interaction);
-        }
-        Debug.Log("Interacted with" + interactible.gameObject.name);
-        
+        { 
+            TM.SetCurrentTask(interactible);
+        }  
     }
 
     
