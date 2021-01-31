@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79139f8d100ee543a8d8abb514e5138, type: 3}
   m_Name: Herramientas
   m_EditorClassIdentifier: 
-  objectName: 
-  objectDescription: 
-  objectImage: {fileID: 0}
-  ObjectInventory: {fileID: 0}
+  objectName: Herramientas
+  objectDescription: "A ella le gusta la jardiner\xEDa, me gusta sentarme en el jard\xEDn
+    y verla trabajar."
+  objectImage: {fileID: 4626967678530752496, guid: bb3ad815c7958f34799a4b730015e300,
+    type: 3}
+  ObjectInventory: {fileID: 6636388968263918724, guid: f9eccd73a09daad448caea09ec636c25,
+    type: 3}
   includesTask: 0
   title: 
   description: 

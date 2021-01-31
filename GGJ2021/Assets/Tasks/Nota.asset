@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79139f8d100ee543a8d8abb514e5138, type: 3}
   m_Name: Nota
   m_EditorClassIdentifier: 
-  objectName: 
-  objectDescription: 
-  objectImage: {fileID: 0}
-  ObjectInventory: {fileID: 0}
-  includesTask: 0
-  title: 
-  description: 
-  goal: 0
-  completableGoal: 0
+  objectName: Nota de Aniversario
+  objectDescription: "Mi aniversario, c\xF3mo pude olvidarlo. Debo prepararme para
+    verla, no debe tardar en llegar. Un d\xEDa tan especial merece ser celebrado
+    apropiadamente."
+  objectImage: {fileID: 1564845085229105538, guid: bb3ad815c7958f34799a4b730015e300,
+    type: 3}
+  ObjectInventory: {fileID: 4206725126666494439, guid: 301f0601c8d709a4582667a94822eb52,
+    type: 3}
+  includesTask: 1
+  title: El regalo perfecto
+  description: "Quiz\xE1 por aqu\xED pueda encontrar algo que llevarle."
+  goal: 3
+  completableGoal: 2

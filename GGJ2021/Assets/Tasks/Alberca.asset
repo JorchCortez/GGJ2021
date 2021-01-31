@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79139f8d100ee543a8d8abb514e5138, type: 3}
   m_Name: Alberca
   m_EditorClassIdentifier: 
-  objectName: 
-  objectDescription: 
-  objectImage: {fileID: 0}
-  ObjectInventory: {fileID: 0}
+  objectName: Alberca Inflable
+  objectDescription: A mis nietos les gusta jugar en la alberca cuando vienen a casa
+    del abuelo, salpican en todos lados y debo llenar la alberca de nuevo. De verdad
+    los quiero mucho.
+  objectImage: {fileID: -4837341870375066347, guid: 1b01252d28c7e394181c891a6a291d56,
+    type: 3}
+  ObjectInventory: {fileID: 9091150463216898253, guid: e4d430aad1679ed4a9c3f1733c337285,
+    type: 3}
   includesTask: 0
   title: 
   description: 

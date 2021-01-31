@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79139f8d100ee543a8d8abb514e5138, type: 3}
   m_Name: Calendario
   m_EditorClassIdentifier: 
-  objectName: 
-  objectDescription: 
-  objectImage: {fileID: 0}
-  ObjectInventory: {fileID: 0}
-  includesTask: 0
-  title: 
-  description: 
-  goal: 0
-  completableGoal: 0
+  objectName: Calendario
+  objectDescription: La fecha escrita en la foto coincide con la marca en mi calendario.
+    Suponiendo que no haya olvidado voltear estas hojas, hoy debe ser un dia importante.
+  objectImage: {fileID: 3710196622539882684, guid: bb3ad815c7958f34799a4b730015e300,
+    type: 3}
+  ObjectInventory: {fileID: 3112750931037595103, guid: 325ad2d3b795dd144a9b445c3c7ddd02,
+    type: 3}
+  includesTask: 1
+  title: "Una ocasi\xF3n especial."
+  description: "\xBFQu\xE9 hay de importante en este d\xEDa?"
+  goal: 2
+  completableGoal: 1

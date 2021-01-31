@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79139f8d100ee543a8d8abb514e5138, type: 3}
   m_Name: Flores
   m_EditorClassIdentifier: 
-  objectName: 
-  objectDescription: 
-  objectImage: {fileID: 0}
-  ObjectInventory: {fileID: 0}
-  includesTask: 0
-  title: 
-  description: 
-  goal: 0
-  completableGoal: 0
+  objectName: Flores
+  objectDescription: "Un ramo de sus flores preferidas, seguro se pondr\xE1 feliz.
+    No puedo esperar a verla."
+  objectImage: {fileID: 6380286997473437221, guid: bb3ad815c7958f34799a4b730015e300,
+    type: 3}
+  ObjectInventory: {fileID: 7274737973903684084, guid: a4fac934e0395384c9dec947657208f6,
+    type: 3}
+  includesTask: 1
+  title: Vestimenta apropiada.
+  description: Debo buscar algo especial que ponerme.
+  goal: 4
+  completableGoal: 3

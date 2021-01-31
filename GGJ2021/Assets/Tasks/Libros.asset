@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79139f8d100ee543a8d8abb514e5138, type: 3}
   m_Name: Libros
   m_EditorClassIdentifier: 
-  objectName: 
-  objectDescription: 
-  objectImage: {fileID: 0}
-  ObjectInventory: {fileID: 0}
+  objectName: "\xC1lbumes Fotogr\xE1ficos"
+  objectDescription: "Parecen \xE1lbumes de fotograf\xEDas... me pregunto d\xF3nde
+    habr\xE9 dejado los dem\xE1s."
+  objectImage: {fileID: 2014888123832554231, guid: bb3ad815c7958f34799a4b730015e300,
+    type: 3}
+  ObjectInventory: {fileID: 5418648388951261119, guid: 2839c1cfda658d04d88e95be1f1a1a8e,
+    type: 3}
   includesTask: 0
   title: 
   description: 
