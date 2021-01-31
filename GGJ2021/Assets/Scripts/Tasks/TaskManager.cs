@@ -1,25 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
  
 public class TaskManager : MonoBehaviour
 { 
     private InteractibleItem task;
-
-    [SerializeField]
-    string taskTitle;
-    [SerializeField]
-    string taskDescription;
+     
     [SerializeField]
     int taskGoal;
 
     public InformacionInventario Inventario;
 
 
+    public GameObject taskContainer;
+    public TextMeshProUGUI taskDescription;
+    public TextMeshProUGUI taskTitle; 
+
     public void SetCurrentTask(GameObject interactible)
     {
         InteractibleItem givenTask = interactible.GetComponent<TaskHandler>().GetItemInfo();
-
+         
         if (givenTask.includesTask)
         { 
             if ((givenTask.completableGoal == 0 && taskGoal < 1 ) || givenTask.completableGoal == taskGoal)
@@ -34,8 +35,9 @@ public class TaskManager : MonoBehaviour
 
                 SetTaskGoal(givenTask.goal);
 
-                taskTitle = givenTask.title;
-                taskDescription = givenTask.description;
+                taskTitle.text = givenTask.title;
+                taskContainer.SetActive(true);
+                taskDescription.text = givenTask.description;
                 taskGoal = givenTask.goal;
             }
             else
@@ -63,7 +65,6 @@ public class TaskManager : MonoBehaviour
                 
         }
     } 
-
 
     public bool CompleteTaks(int goal)
     {

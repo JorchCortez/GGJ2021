@@ -15,6 +15,7 @@ public class InformacionInventario : MonoBehaviour
     public GameObject ItemInfo;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
