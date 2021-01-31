@@ -11,11 +11,17 @@ public class InteractionHandler : MonoBehaviour
     SpriteRenderer coloredImage;
     [SerializeField]
     GameObject blueImage;
+    AudioSource source;
 
     public int duration = 150;
+    private void Start()
+    {
+        source = gameObject.GetComponent<AudioSource>();
+    }
 
     public void Colorize()
     {
+        source.Play();
         StartCoroutine(ColorizeObject(duration));
     }
 

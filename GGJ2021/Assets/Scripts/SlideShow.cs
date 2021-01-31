@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SlideShow : MonoBehaviour
 {
@@ -39,6 +40,8 @@ public class SlideShow : MonoBehaviour
             color.a = 0.0f;
             image.color = color;
         }
+
+        SceneManager.LoadScene("Credits", LoadSceneMode.Single);
 
         yield return null;
     }

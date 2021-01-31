@@ -30,8 +30,13 @@ public class Player : MonoBehaviour
     [Header("Menu")]
     public GameObject inventory;
 
-    [Header("Animations")]
+    [Header("Animations And Effects")]
     public Animator anim;
+    AudioSource source; 
+    public AudioClip openMenu;
+    public AudioClip closeMenu;
+    public AudioClip steps;
+    public GameObject patio;
 
 
 
@@ -39,6 +44,7 @@ public class Player : MonoBehaviour
     { 
         AlterSizeByPosition();
         anim = gameObject.GetComponent<Animator>();
+        source = gameObject.GetComponent<AudioSource>();
     }
      
     void Update()
@@ -62,10 +68,16 @@ public class Player : MonoBehaviour
             if(inputX != 0 || inputY != 0)
             {
                 anim.SetBool("isWalking", true);
+                if (!source.isPlaying && patio.gameObject.activeSelf)
+                {
+                    source.clip = steps;
+                    source.Play();
+                }
             }
             else
             {
                 anim.SetBool("isWalking", false);
+                source.Stop();
             }
 
             Vector3 playerMovement = new Vector3(inputX * speed, inputY * speed, 0.0f);
@@ -148,9 +160,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void ToggleInventory()
-    {
-
+    public void ToggleInventory()
+    { 
+        source.clip = inventory.activeSelf ? closeMenu : openMenu;
+        source.loop = false;
+        source.Play();
         inventory.SetActive(!inventory.activeSelf);
         canMove = !inventory.activeSelf;
     }
