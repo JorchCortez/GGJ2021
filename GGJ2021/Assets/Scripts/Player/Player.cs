@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
         //Show the interaction button or something that will give the player the option to interact with an object 
         if (canInteract)
         {
-            if (Input.GetKeyDown(KeyCode.M))
+            if (Input.GetKeyDown(KeyCode.E))
             { 
                 SetCurrentTask(interactible); 
             }
@@ -93,6 +93,10 @@ public class Player : MonoBehaviour
     {
         if (interactible.GetComponent<TaskHandler>())
         {
+            if (interactible.GetComponent<InteractionHandler>())
+            {
+                interactible.GetComponent<InteractionHandler>().Colorize();
+            }
             InteractibleItem interaction = interactible.GetComponent<TaskHandler>().GetItemInfo();
             TM.SetCurrentTask(interaction);
         }

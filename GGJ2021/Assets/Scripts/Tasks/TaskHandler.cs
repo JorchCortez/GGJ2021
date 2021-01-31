@@ -6,7 +6,7 @@ public class TaskHandler : MonoBehaviour
 {
     [SerializeField]
     InteractibleItem item;
-
+     
     public InteractibleItem GetItemInfo()
     {
         return item;

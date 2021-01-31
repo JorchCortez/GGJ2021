@@ -14,15 +14,6 @@ public class InteractionHandler : MonoBehaviour
 
     public int duration = 150;
 
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Colorize();
-        }
-    }
-
     public void Colorize()
     {
         StartCoroutine(ColorizeObject(duration));

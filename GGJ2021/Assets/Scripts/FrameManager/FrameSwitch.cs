@@ -10,19 +10,13 @@ public class FrameSwitch : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     { 
-        if (other.gameObject.tag.Equals("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             if (firstFrame.activeSelf)
             { 
                 firstFrame.SetActive(false);
                 nextFrame.SetActive(true);
-            }
-            else
-            {
-                firstFrame.SetActive(true);
-                nextFrame.SetActive(false);
-
-            }
+            } 
         }
     }
 }

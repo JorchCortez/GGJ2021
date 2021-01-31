@@ -13,10 +13,13 @@ public class TaskManager : MonoBehaviour
     [SerializeField]
     int taskGoal;
 
+    public InformacionInventario Inventario;
 
 
     public void SetCurrentTask(InteractibleItem givenTask)
     {
+        Inventario.SetObjectAccquired(givenTask);
+
         if (givenTask.includesTask)
         { 
             if (givenTask.completableGoal == 0 || givenTask.completableGoal == taskGoal)

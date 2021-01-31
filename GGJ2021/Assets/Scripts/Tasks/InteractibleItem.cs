@@ -10,6 +10,7 @@ public class InteractibleItem : ScriptableObject
     public string objectName;
     public string objectDescription;
     public Sprite objectImage;
+    public GameObject ObjectInventory;
 
     [Header("Informacion de las tareas")]
     public bool includesTask;
