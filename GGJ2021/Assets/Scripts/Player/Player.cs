@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine; 
 
 public class Player : MonoBehaviour
 {
     [Header("Player control")]
 
     public float speed = 1;
+    private bool canMove = true;
 
     [SerializeField]
     private float defaultPlayerSize = 1;
     float inputX;
     float inputY;
 
-    bool headingRight = true;
+    bool headingRight = false;
     bool canModifySize = true;
 
 
@@ -25,6 +26,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private bool canInteract = false;
     GameObject interactible = null;
+
+    [Header("Menu")]
+    public GameObject inventory;
 
 
     void Start()
@@ -41,23 +45,30 @@ public class Player : MonoBehaviour
         inputY = Input.GetAxis("Vertical");
         canModifySize = inputY >= 0.01 || inputY <= -0.01;
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ToggleInventory();
+        }
 
         ShowInteraction();
     }
 
     private void FixedUpdate()
     {
-        Vector3 playerMovement = new Vector3(inputX * speed, inputY * speed, 0.0f);
-        transform.position = transform.position + playerMovement * Time.deltaTime;
-        SwitchViewSide(); 
-        AlterSizeByPosition();
+        if (canMove)
+        {
+            Vector3 playerMovement = new Vector3(inputX * speed, inputY * speed, 0.0f);
+            transform.position = transform.position + playerMovement * Time.deltaTime;
+            SwitchViewSide(); 
+            AlterSizeByPosition(); 
+        }
     }
 
     private void AlterSizeByPosition()
     { 
         if (canModifySize)
         { 
-                float scaleVariation = -transform.position.y / 15 ;
+                float scaleVariation = -transform.position.y / 30 ;
                 Vector3 scaleChange = new Vector3(defaultPlayerSize + scaleVariation, defaultPlayerSize + scaleVariation, defaultPlayerSize + scaleVariation);
                 transform.localScale = scaleChange;  
         } 
@@ -116,6 +127,12 @@ public class Player : MonoBehaviour
             interactible = null;
             canInteract = false;
         }
+    }
+
+    private void ToggleInventory()
+    {
+        inventory.SetActive(!inventory.activeSelf);
+        canMove = !inventory.activeSelf;
     }
 
 
