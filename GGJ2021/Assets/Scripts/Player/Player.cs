@@ -30,13 +30,14 @@ public class Player : MonoBehaviour
     [Header("Menu")]
     public GameObject inventory;
 
+    [Header("Animations")]
+    public Animator anim;
+
 
     void Start()
-    {
-        defaultPlayerSize = transform.localScale.x;
-
-        transform.localScale = new Vector3(defaultPlayerSize, defaultPlayerSize, defaultPlayerSize);
-
+    { 
+        AlterSizeByPosition();
+        anim = gameObject.GetComponent<Animator>();
     }
      
     void Update()
@@ -57,6 +58,15 @@ public class Player : MonoBehaviour
     {
         if (canMove)
         {
+            if(inputX != 0 || inputY != 0)
+            {
+                anim.SetBool("isWalking", true);
+            }
+            else
+            {
+                anim.SetBool("isWalking", false);
+            }
+
             Vector3 playerMovement = new Vector3(inputX * speed, inputY * speed, 0.0f);
             transform.position = transform.position + playerMovement * Time.deltaTime;
             SwitchViewSide(); 
@@ -69,21 +79,29 @@ public class Player : MonoBehaviour
         if (canModifySize)
         { 
                 float scaleVariation = -transform.position.y / 30 ;
-                Vector3 scaleChange = new Vector3(defaultPlayerSize + scaleVariation, defaultPlayerSize + scaleVariation, defaultPlayerSize + scaleVariation);
+                Vector3 scaleChange = new Vector3(headingRight ? defaultPlayerSize + scaleVariation : (defaultPlayerSize * -1 - scaleVariation) , defaultPlayerSize + scaleVariation, defaultPlayerSize + scaleVariation);
                 transform.localScale = scaleChange;  
         } 
         canModifySize = false;
     }
 
     private void SwitchViewSide()
-    {
-        if (inputX < 0 && !headingRight || inputX > 0 && headingRight) {
-            headingRight = !headingRight;
+    { 
+        Vector3 scale;
+        scale = transform.localScale;
 
-            Vector3 scale = transform.localScale;
-            scale.x *= -1;
-            transform.localScale = scale;
+        if (inputX <= -0.01 ) {
+            headingRight = false; 
         }
+        else if (inputX >= 0.01)
+        {
+            headingRight = true; 
+        }
+
+        float absoluteVal = Mathf.Abs(transform.localScale.x);
+        scale.x = headingRight ? absoluteVal : absoluteVal * -1;
+        transform.localScale = scale;
+
 
     }
 
