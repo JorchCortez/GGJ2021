@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79139f8d100ee543a8d8abb514e5138, type: 3}
   m_Name: Esferas
   m_EditorClassIdentifier: 
-  objectName: 
-  objectDescription: 
-  objectImage: {fileID: 0}
-  ObjectInventory: {fileID: 0}
+  objectName: Esferas
+  objectDescription: "Recuerdo nuestros viajes, la pas\xE1bamos tan bien. A veces
+    conduc\xEDamos por d\xEDas, deteniendonos a ver los paisajes. A ella le gustaba
+    mucho tomar fotograf\xEDas, a mi me gustaba mucho verla sonre\xEDr."
+  objectImage: {fileID: 6996492222815415416, guid: bb3ad815c7958f34799a4b730015e300,
+    type: 3}
+  ObjectInventory: {fileID: 3151487126350750130, guid: 0b19ffc425d60f04391b1989ca83c3fe,
+    type: 3}
   includesTask: 0
   title: 
   description: 

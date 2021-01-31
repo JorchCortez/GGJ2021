@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79139f8d100ee543a8d8abb514e5138, type: 3}
   m_Name: Panoleta
   m_EditorClassIdentifier: 
-  objectName: 
-  objectDescription: 
-  objectImage: {fileID: 0}
-  ObjectInventory: {fileID: 0}
+  objectName: "Pa\xF1oleta"
+  objectDescription: "La conoc\xED en un campamento, me llam\xF3 la atenci\xF3n su
+    forma de re\xEDr y enfrentar cada reto con la mirada en alto. La admiraba mucho,
+    a\xFAn lo hago, ese brillo nunca se fue."
+  objectImage: {fileID: -4221830926778613084, guid: bb3ad815c7958f34799a4b730015e300,
+    type: 3}
+  ObjectInventory: {fileID: 640972416397014286, guid: f595e5bfb340b834e864cf78d27f501c,
+    type: 3}
   includesTask: 0
   title: 
   description: 

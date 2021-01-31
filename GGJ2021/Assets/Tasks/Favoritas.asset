@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79139f8d100ee543a8d8abb514e5138, type: 3}
   m_Name: Favoritas
   m_EditorClassIdentifier: 
-  objectName: 
-  objectDescription: 
-  objectImage: {fileID: 0}
-  ObjectInventory: {fileID: 0}
+  objectName: 'Sus Flores '
+  objectDescription: "\xC9ramos tan j\xF3venes cuando nos conocimos. Al principio
+    mi timidez me imped\xEDa hablarle, pero ella siempre me recibi\xF3 con gran calidez.
+    Un d\xEDa decid\xED decirle lo que sent\xEDa, y le llev\xE9 flores. No s\xE9
+    si fue suerte el atinarle a sus favoritas, o si dijo que lo eran para hacerme
+    feliz. "
+  objectImage: {fileID: 3140303851083407099, guid: bb3ad815c7958f34799a4b730015e300,
+    type: 3}
+  ObjectInventory: {fileID: 8732575337382850436, guid: ddcb6f67072907a419c7fa6e4ff57df5,
+    type: 3}
   includesTask: 0
   title: 
   description: 

@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79139f8d100ee543a8d8abb514e5138, type: 3}
   m_Name: Closet
   m_EditorClassIdentifier: 
-  objectName: Closet
-  objectDescription: 
-  objectImage: {fileID: 5874994921825966060, guid: 62b62888ec0f71a4d8565ae72d6c3ac2,
+  objectName: Ropa Formal
+  objectDescription: Un atuendo apropiado para salir a cenar, debo vestirme pronto.
+  objectImage: {fileID: 3775469579086993300, guid: bb3ad815c7958f34799a4b730015e300,
     type: 3}
-  ObjectInventory: {fileID: 1098592146148175908, guid: 4a0f4fcc002a9244ead70c04e3a0efd0,
+  ObjectInventory: {fileID: 5979899576379739944, guid: 5573a036952bedf4ebb776617767f43b,
     type: 3}
-  includesTask: 0
+  includesTask: 1
   title: 
   description: 
-  goal: 0
-  completableGoal: 0
+  goal: 5
+  completableGoal: 4

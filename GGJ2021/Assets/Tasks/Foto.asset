@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79139f8d100ee543a8d8abb514e5138, type: 3}
   m_Name: Foto
   m_EditorClassIdentifier: 
-  objectName: 
-  objectDescription: 
-  objectImage: {fileID: 0}
-  ObjectInventory: {fileID: 0}
-  includesTask: 0
-  title: 
-  description: 
-  goal: 0
+  objectName: Foto
+  objectDescription: "Una fotograf\xEDa de nuestra boda. Aquel d\xEDa est\xE1bamos
+    tan ansiosos por ir a nuestra luna de miel que olvidamos encargar a alguien que
+    recogiera esas fotos. Ella pas\xF3 semanas preguntando hasta encontrar qui\xE9n
+    las hab\xEDa guardado. Me regal\xF3 esta impresi\xF3n un tiempo despu\xE9s."
+  objectImage: {fileID: -7302540089576172625, guid: bb3ad815c7958f34799a4b730015e300,
+    type: 3}
+  ObjectInventory: {fileID: 2864901287851143341, guid: 69c131184040844449d1746c1b649691,
+    type: 3}
+  includesTask: 1
+  title: Recuerdos perdidos.
+  description: "\xBFQu\xE9 d\xEDa es hoy?"
+  goal: 1
   completableGoal: 0
