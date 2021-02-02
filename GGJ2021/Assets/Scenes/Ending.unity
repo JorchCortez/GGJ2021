@@ -702,3 +702,4 @@ MonoBehaviour:
   fadeSpeedInSpeed: 1
   fadeOutSpeed: 1
   activeTime: 4
+  speedUpPoint: 7

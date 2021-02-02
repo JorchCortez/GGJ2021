@@ -12,6 +12,9 @@ public class SlideShow : MonoBehaviour
     public float fadeSpeedInSpeed = 2;
     public float fadeOutSpeed = 1;
     public float activeTime = 3.0f;
+    public float speedUpPoint = 0;
+
+
 
     public void Start(){
         image.sprite = null;
@@ -22,6 +25,16 @@ public class SlideShow : MonoBehaviour
     IEnumerator StartSlideShow(){
         
         for(int i = 0; i < sprites.Count; i++){
+            if(i == speedUpPoint)
+            {
+                fadeSpeedInSpeed = 1;
+                fadeOutSpeed = 1;
+                activeTime = 1;
+            }
+            if(i==sprites.Count - 1)
+            { 
+                activeTime = 4;
+            }
             image.sprite = sprites[i];
             Color color = image.color;
             while(color.a < 1.0f){
