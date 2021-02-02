@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
 
     [Header("Menu")]
     public GameObject inventory;
+    public GameObject taskList;
 
     [Header("Animations And Effects")]
     public Animator anim;
@@ -53,9 +54,13 @@ public class Player : MonoBehaviour
         inputY = Input.GetAxis("Vertical");
         canModifySize = inputY >= 0.01 || inputY <= -0.01;
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             ToggleInventory();
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ToggleTaskList();
         }
 
         ShowInteraction();
@@ -161,12 +166,18 @@ public class Player : MonoBehaviour
     }
 
     public void ToggleInventory()
-    { 
+    {
         source.clip = inventory.activeSelf ? closeMenu : openMenu;
         source.loop = false;
         source.Play();
         inventory.SetActive(!inventory.activeSelf);
         canMove = !inventory.activeSelf;
+    }
+
+
+    public void ToggleTaskList()
+    {
+        taskList.SetActive(!taskList.activeSelf); 
     }
 
 

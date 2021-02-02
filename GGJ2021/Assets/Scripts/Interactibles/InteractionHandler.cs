@@ -12,6 +12,8 @@ public class InteractionHandler : MonoBehaviour
     [SerializeField]
     GameObject blueImage;
     AudioSource source;
+    [SerializeField]
+    GameObject particles;
 
     public int duration = 150;
     private void Start()
@@ -21,6 +23,10 @@ public class InteractionHandler : MonoBehaviour
 
     public void Colorize()
     {
+        if (particles)
+        {
+            particles.SetActive(false);
+        }
         source.Play();
         StartCoroutine(ColorizeObject(duration));
     }

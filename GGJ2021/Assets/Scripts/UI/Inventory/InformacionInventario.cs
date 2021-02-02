@@ -51,8 +51,9 @@ public class InformacionInventario : MonoBehaviour
     {
         Debug.Log(info.objectName);
         Debug.Log(info.objectDescription);
-
+         
         itemImage.sprite = info.objectImage;
+
         itemData.text = info.objectDescription;
         itemName.text = info.objectName;
         ItemInfo.SetActive(true); 
